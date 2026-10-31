@@ -8,7 +8,7 @@ namespace RegistroGastos
     {
         static void Main(string[] args)
         {
-            // Dos listas paralelas: mismo índice = mismo gasto
+            
             List<string> descripciones = new List<string>();
             List<decimal> montos = new List<decimal>();
 
@@ -26,7 +26,7 @@ namespace RegistroGastos
 
                 if (!int.TryParse(Console.ReadLine(), out opcion))
                 {
-                    opcion = 0; // opción no válida
+                    opcion = 0; 
                 }
 
                 switch (opcion)
@@ -66,7 +66,7 @@ namespace RegistroGastos
             if (string.IsNullOrWhiteSpace(descripcion) || !montoValido || monto <= 0)
             {
                 Console.WriteLine("Datos inválidos.");
-                return; // vuelve al menú sin cerrar el programa
+                return; 
             }
 
             descripciones.Add(descripcion.Trim());
@@ -105,7 +105,7 @@ namespace RegistroGastos
             {
                 for (int i = 0; i < descripciones.Count; i++)
                 {
-                    // Sin importar mayúsculas o minúsculas
+                   
                     if (descripciones[i].ToLower().Contains(texto.Trim().ToLower()))
                     {
                         Console.WriteLine($"{descripciones[i]} - {montos[i]:F2}");
